@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 215 25% 13%;
+  --muted: 210 33% 96%;
+  --border: 215 25% 88%;
+  --primary: 209 79% 37%;
+  --accent: 198 52% 45%;
+}
+
+.dark {
+  --background: 217 33% 8%;
+  --foreground: 210 40% 98%;
+  --muted: 215 27% 14%;
+  --border: 215 20% 26%;
+  --primary: 204 85% 62%;
+  --accent: 190 58% 49%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+}
+
+main {
+  @apply min-h-screen;
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, hsl(var(--border) / 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.25) 1px, transparent 1px);
+  background-size: 38px 38px;
+}

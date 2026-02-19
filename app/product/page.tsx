@@ -1,0 +1,51 @@
+import type { Metadata } from 'next';
+import { Container } from '@/components/container';
+import { SectionTitle } from '@/components/section-title';
+
+export const metadata: Metadata = {
+  title: 'Product',
+  description: 'VectorVue product overview: timeline evidence, control effectiveness, exportable proof, and continuous compliance.'
+};
+
+export default function ProductPage() {
+  const capabilities = [
+    {
+      title: 'Timeline Evidence',
+      description:
+        'Track control activity as a chronological record, so teams and auditors can see exactly when controls were tested and what changed.'
+    },
+    {
+      title: 'Control Effectiveness',
+      description:
+        'Measure whether controls are functioning over time, not just configured once. Surface drift and broken assumptions quickly.'
+    },
+    {
+      title: 'Exportable Proof',
+      description:
+        'Package evidence and verification artifacts into exportable reports for customer security reviews and formal audits.'
+    },
+    {
+      title: 'Continuous Compliance',
+      description:
+        'Map validated controls to compliance objectives and maintain readiness between audit cycles across frameworks.'
+    }
+  ];
+
+  return (
+    <Container className="py-16 sm:py-20">
+      <SectionTitle eyebrow="Product" title="A system of record for provable security controls">
+        VectorVue converts operational telemetry into trusted assurance evidence so security and compliance teams can demonstrate
+        control performance continuously.
+      </SectionTitle>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {capabilities.map((capability) => (
+          <article key={capability.title} className="rounded-xl border border-border p-7">
+            <h3 className="text-xl font-semibold">{capability.title}</h3>
+            <p className="mt-3 text-foreground/70">{capability.description}</p>
+          </article>
+        ))}
+      </div>
+    </Container>
+  );
+}
