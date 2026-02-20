@@ -1,12 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import { navItems } from '@/lib/site';
 import { Container } from '@/components/container';
-
-const ThemeToggle = dynamic(() => import('@/components/theme-toggle').then((mod) => mod.ThemeToggle), {
-  ssr: false
-});
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export function Header() {
   return (
