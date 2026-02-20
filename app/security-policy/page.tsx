@@ -151,12 +151,12 @@ export default async function SecurityPolicyPage() {
 
   return (
     <Container className="py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-muted/20 p-6 sm:p-10">
+      <div className="surface-panel-elevated mx-auto max-w-4xl p-6 sm:p-10">
         <p className="text-xs uppercase tracking-[0.18em] text-primary/90">Live Policy</p>
         <h1 className="mt-2 font-brand text-3xl text-foreground sm:text-4xl">Security Policy</h1>
-        <p className="mt-3 text-sm text-foreground/70">Source: `SECURITY.md`</p>
+        <p className="mt-3 text-sm text-secondary">Source: `SECURITY.md`</p>
 
-        <article className="mt-8 space-y-5 text-foreground/85">
+        <article className="mt-8 space-y-5 text-foreground">
           {blocks.map((block, index) => {
             if (block.type === 'h1') {
               return (

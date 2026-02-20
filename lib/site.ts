@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'VectorVue',
   description:
     'VectorVue by NyxeraLabs delivers Continuous Security Assurance with auditor-verifiable evidence.',
-  url: 'https://vectorvue.com'
+  url: 'https://vectorvue.nyxera.cloud'
 };
 
 export const navItems = [

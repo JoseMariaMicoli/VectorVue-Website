@@ -39,7 +39,7 @@ export default function ProductPage() {
           VectorVue converts operational telemetry into trusted assurance evidence so security and compliance teams can demonstrate
           control performance continuously.
         </SectionTitle>
-        <div className="rounded-2xl border border-border/80 bg-background/70 p-3">
+        <div className="surface-panel-elevated p-3">
           <Image
             src="/images/vectorvue-hero.png"
             alt="VectorVue evidence timeline"
@@ -52,9 +52,9 @@ export default function ProductPage() {
 
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         {capabilities.map((capability) => (
-          <article key={capability.title} className="rounded-xl border border-border p-7">
+          <article key={capability.title} className="surface-panel p-7">
             <h3 className="text-xl font-semibold">{capability.title}</h3>
-            <p className="mt-3 text-foreground/70">{capability.description}</p>
+            <p className="mt-3 text-secondary">{capability.description}</p>
           </article>
         ))}
       </div>

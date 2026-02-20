@@ -6,17 +6,17 @@ import { ThemeToggle } from '@/components/theme-toggle';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 shadow-soft backdrop-blur">
+      <Container className="flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-0 text-foreground">
-          <div className="relative h-16 w-28">
-            <Image src="/branding/vectorvue-logo.png" alt="VectorVue logo" fill className="object-contain object-left" priority />
+          <div className="relative h-12 w-12">
+            <Image src="/VectorVueLogo-transp.png" alt="VectorVue logo" fill className="object-contain" priority />
           </div>
-          <span className="font-brand hidden -ml-6 text-base leading-none text-foreground lg:inline">VectorVue</span>
+          <span className="font-brand hidden pl-2 text-base font-extrabold leading-none text-foreground lg:inline">VectorVue</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">
+            <Link key={item.href} href={item.href} className="text-sm text-secondary transition-colors hover:text-foreground">
               {item.label}
             </Link>
           ))}
@@ -25,7 +25,7 @@ export function Header() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 md:inline-flex"
+            className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primaryHover md:inline-flex"
           >
             Request Pilot
           </Link>

@@ -112,7 +112,7 @@ Security headers are enforced at CDN level.
 
 If you discover a vulnerability affecting the website delivery or integrity:
 
-[founder@nyxera.cloud](mailto:founder@nyxera.cloud)
+[security@nyxera.cloud](mailto:security@nyxera.cloud) (CC: [founder@nyxera.cloud](mailto:founder@nyxera.cloud))
 
 Do not include exploit code in public issues.
 

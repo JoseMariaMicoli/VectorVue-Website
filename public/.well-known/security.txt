@@ -1,0 +1,9 @@
+Contact: mailto:security@nyxera.cloud
+Contact: mailto:founder@nyxera.cloud
+Encryption: https://vectorvue.nyxera.cloud/.well-known/pgp-key.txt
+Encryption: openpgp4fpr:F745F87A812EAC72A87D225C72E2D3134E190EC9
+Policy: https://vectorvue.nyxera.cloud/security-policy
+Canonical: https://vectorvue.nyxera.cloud/.well-known/security.txt
+Preferred-Languages: en, es
+Scope: https://vectorvue.nyxera.cloud/
+Expires: 2027-02-20T00:00:00.000Z

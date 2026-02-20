@@ -3,21 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 215 25% 13%;
-  --muted: 210 33% 96%;
-  --border: 215 25% 88%;
-  --primary: 275 53% 40%;
-  --accent: 194 72% 56%;
+  --background: 9 13 39;
+  --surface: 13 20 54;
+  --surface-elevated: 18 27 69;
+  --border: 32 44 102;
+  --primary: 138 43 226;
+  --primary-hover: 123 38 203;
+  --electric: 0 255 247;
+  --foreground: 224 224 224;
+  --secondary-foreground: 160 160 160;
 }
 
 .dark {
-  --background: 217 33% 8%;
-  --foreground: 210 40% 98%;
-  --muted: 215 27% 14%;
-  --border: 215 20% 26%;
-  --primary: 275 85% 64%;
-  --accent: 194 79% 61%;
+  --background: 7 11 34;
+  --surface: 11 17 48;
+  --surface-elevated: 16 24 61;
+  --border: 29 40 92;
+  --primary: 138 43 226;
+  --primary-hover: 123 38 203;
+  --electric: 0 255 247;
+  --foreground: 224 224 224;
+  --secondary-foreground: 160 160 160;
 }
 
 html,
@@ -36,9 +42,30 @@ main {
 }
 
 .bg-grid {
-  background-image: linear-gradient(to right, hsl(var(--border) / 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(var(--border) / 0.25) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgb(var(--border) / 0.28) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--border) / 0.28) 1px, transparent 1px);
   background-size: 38px 38px;
+}
+
+.bg-technical-gradient {
+  background-image: radial-gradient(circle at 50% -20%, rgb(var(--primary) / 0.25), rgb(var(--electric) / 0.15), transparent 60%);
+}
+
+.bg-premium-canvas {
+  background-image:
+    radial-gradient(680px 240px at 7% 2%, rgb(var(--electric) / 0.1), transparent 65%),
+    radial-gradient(840px 360px at 88% -5%, rgb(var(--primary) / 0.19), transparent 62%),
+    linear-gradient(180deg, rgb(var(--surface) / 0.5), transparent 42%);
+}
+
+.surface-panel {
+  @apply rounded-xl border border-border bg-surface shadow-soft;
+  background-image: linear-gradient(150deg, rgb(var(--surface-elevated) / 0.3), rgb(var(--surface) / 0.96) 55%);
+}
+
+.surface-panel-elevated {
+  @apply rounded-2xl border border-border bg-surfaceElevated shadow-layered;
+  background-image: linear-gradient(160deg, rgb(var(--surface-elevated) / 0.95), rgb(var(--surface) / 0.85) 65%, rgb(var(--surface) / 0.98));
 }
 
 .font-brand {

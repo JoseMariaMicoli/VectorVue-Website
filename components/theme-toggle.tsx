@@ -1,13 +1,18 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const mounted = typeof resolvedTheme !== 'undefined';
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return <div className="h-9 w-9 rounded-md border border-border bg-background" aria-hidden="true" />;
+    return <div className="h-9 w-9 rounded-md border border-border bg-surface" aria-hidden="true" />;
   }
 
   const isDark = resolvedTheme === 'dark';
@@ -17,7 +22,7 @@ export function ThemeToggle() {
       type="button"
       aria-label="Toggle color mode"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-sm text-foreground transition-colors hover:bg-muted"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-surface text-sm text-foreground transition-colors hover:bg-hover"
     >
       {isDark ? 'L' : 'D'}
     </button>

@@ -41,9 +41,9 @@ export default function UseCasesPage() {
 
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
         {cases.map((entry) => (
-          <section key={entry.title} className="rounded-xl border border-border p-7">
+          <section key={entry.title} className="surface-panel p-7">
             <h3 className="text-xl font-semibold">{entry.title}</h3>
-            <ul className="mt-4 space-y-3 text-foreground/70">
+            <ul className="mt-4 space-y-3 text-secondary">
               {entry.points.map((point) => (
                 <li key={point}>• {point}</li>
               ))}
