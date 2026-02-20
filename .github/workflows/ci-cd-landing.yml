@@ -1,0 +1,180 @@
+name: CI/CD Landing Page
+
+# Branch flow:
+# feature/* -> dev -> QA -> main
+on:
+  push:
+    branches:
+      - "feature/**"
+      - "dev"
+      - "QA"
+      - "main"
+  pull_request:
+    branches:
+      - "dev"
+      - "QA"
+      - "main"
+
+# Needed for checkout + pushing tags from main deployments
+permissions:
+  contents: write
+
+concurrency:
+  # Avoid overlapping deploys per branch
+  group: landing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Lint + Build
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Fetch repository code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2) Use Node 20 with npm cache for speed
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # 3) Install dependencies (clean, deterministic)
+      - name: Install dependencies
+        run: npm ci
+
+      # 4) Run lint/static checks if scripts exist
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Type check
+        run: npm run typecheck --if-present
+
+      # 5) Build static site output
+      - name: Build
+        run: npm run build --if-present
+
+      # 6) Detect static output folder (out/dist/build)
+      - name: Detect build output directory
+        id: detect_output
+        run: |
+          if [ -d "out" ]; then
+            echo "dir=out" >> "$GITHUB_OUTPUT"
+          elif [ -d "dist" ]; then
+            echo "dir=dist" >> "$GITHUB_OUTPUT"
+          elif [ -d "build" ]; then
+            echo "dir=build" >> "$GITHUB_OUTPUT"
+          else
+            echo "No static output folder found (expected out/dist/build)." >&2
+            exit 1
+          fi
+
+      # 7) Keep build artifact for deploy jobs
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: landing-site
+          path: ${{ steps.detect_output.outputs.dir }}
+
+  deploy_staging:
+    name: Deploy to Staging (QA)
+    runs-on: ubuntu-latest
+    needs: checks
+    if: github.event_name == 'push' && github.ref == 'refs/heads/QA'
+    environment: staging
+
+    steps:
+      # 1) Download built static files from checks job
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: landing-site
+          path: site
+
+      # 2) Configure SSH key for deployment
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.STAGING_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.STAGING_SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      # 3) Sync static files to staging server path
+      - name: Deploy to staging server
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_ed25519" \
+            site/ \
+            "${{ secrets.STAGING_SSH_USER }}@${{ secrets.STAGING_SSH_HOST }}:${{ secrets.STAGING_DEPLOY_PATH }}/"
+
+      # 4) Basic health check after deploy
+      - name: Staging health check
+        run: |
+          curl --fail --silent --show-error --location \
+            --retry 5 --retry-delay 5 \
+            "${{ secrets.STAGING_HEALTHCHECK_URL }}"
+
+  deploy_production:
+    name: Deploy to Production (main)
+    runs-on: ubuntu-latest
+    needs: checks
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: production
+
+    steps:
+      # 1) Download built static files from checks job
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: landing-site
+          path: site
+
+      # 2) Configure SSH key for deployment
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PROD_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.PROD_SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      # 3) Sync static files to production server path
+      - name: Deploy to production server
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_ed25519" \
+            site/ \
+            "${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }}:${{ secrets.PROD_DEPLOY_PATH }}/"
+
+      # 4) Basic health check after deploy
+      - name: Production health check
+        run: |
+          curl --fail --silent --show-error --location \
+            --retry 5 --retry-delay 5 \
+            "${{ secrets.PROD_HEALTHCHECK_URL }}"
+
+  tag_release:
+    name: Tag release on main
+    runs-on: ubuntu-latest
+    needs: deploy_production
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      # 1) Checkout with full history/tags to create and push new tag
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2) Create timestamp tag: YYYY.MM.DD.HHMM (UTC)
+      - name: Create timestamp tag
+        id: make_tag
+        run: |
+          TAG="$(date -u +'%Y.%m.%d.%H%M')"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          git tag "${TAG}"
+
+      # 3) Push tag to remote
+      - name: Push tag
+        run: git push origin "${{ steps.make_tag.outputs.tag }}"
