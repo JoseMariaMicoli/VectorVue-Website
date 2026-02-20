@@ -22,7 +22,13 @@ export default function ContactPage() {
         </section>
 
         <section className="rounded-xl border border-border p-6 sm:p-8">
-          <form className="space-y-5" aria-label="Pilot request form">
+          <form
+            className="space-y-5"
+            aria-label="Pilot request form"
+            action="mailto:founder@nyxera.cloud"
+            method="post"
+            encType="text/plain"
+          >
             <div>
               <label htmlFor="name" className="mb-2 block text-sm font-medium">
                 Name
@@ -78,6 +84,12 @@ export default function ContactPage() {
               Submit Pilot Request
             </button>
           </form>
+          <p className="mt-4 text-sm text-foreground/70">
+            Prefer direct email?{' '}
+            <a className="underline hover:no-underline" href="mailto:founder@nyxera.cloud">
+              founder@nyxera.cloud
+            </a>
+          </p>
         </section>
       </div>
     </Container>

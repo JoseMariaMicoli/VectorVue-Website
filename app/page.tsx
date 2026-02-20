@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/container';
 import { SectionTitle } from '@/components/section-title';
 
@@ -7,23 +8,36 @@ export default function Home() {
     <>
       <section className="border-b border-border/80 bg-grid">
         <Container className="py-20 sm:py-28">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">Continuous Security Assurance</p>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
-              Stop Preparing for Audits. Start Passing Them Continuously.
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground/75">
-              VectorVue continuously verifies that your controls operate as designed and transforms operational activity into
-              auditor-verifiable evidence. Your team stops scrambling for screenshots and starts showing provable control health in
-              real time.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/contact" className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-white hover:opacity-90">
-                Request Pilot
-              </Link>
-              <Link href="/product" className="rounded-md border border-border px-6 py-3 text-sm font-medium hover:bg-muted">
-                View Product
-              </Link>
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_420px]">
+            <div className="max-w-4xl">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">Continuous Security Assurance</p>
+              <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
+                Stop Preparing for Audits. Start Passing Them Continuously.
+              </h1>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground/75">
+                VectorVue continuously verifies that your controls operate as designed and transforms operational activity into
+                auditor-verifiable evidence. Your team stops scrambling for screenshots and starts showing provable control health
+                in real time.
+              </p>
+              <p className="mt-4 text-sm font-medium text-foreground/70">Commercial product by NyxeraLabs.</p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link href="/contact" className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-white hover:opacity-90">
+                  Request Pilot
+                </Link>
+                <Link href="/product" className="rounded-md border border-border px-6 py-3 text-sm font-medium hover:bg-muted">
+                  View Product
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border/80 bg-background/70 p-3">
+              <Image
+                src="/images/vectorvue-hero.png"
+                alt="VectorVue control assurance workflow"
+                width={1536}
+                height={1024}
+                className="h-auto w-full rounded-xl"
+                priority
+              />
             </div>
           </div>
         </Container>

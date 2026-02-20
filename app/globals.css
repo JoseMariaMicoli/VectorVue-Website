@@ -7,8 +7,8 @@
   --foreground: 215 25% 13%;
   --muted: 210 33% 96%;
   --border: 215 25% 88%;
-  --primary: 209 79% 37%;
-  --accent: 198 52% 45%;
+  --primary: 275 53% 40%;
+  --accent: 194 72% 56%;
 }
 
 .dark {
@@ -16,8 +16,8 @@
   --foreground: 210 40% 98%;
   --muted: 215 27% 14%;
   --border: 215 20% 26%;
-  --primary: 204 85% 62%;
-  --accent: 190 58% 49%;
+  --primary: 275 85% 64%;
+  --accent: 194 79% 61%;
 }
 
 html,
@@ -28,6 +28,7 @@ body {
 
 body {
   @apply bg-background text-foreground antialiased;
+  font-family: Roboto, ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
 }
 
 main {
@@ -38,4 +39,10 @@ main {
   background-image: linear-gradient(to right, hsl(var(--border) / 0.25) 1px, transparent 1px),
     linear-gradient(to bottom, hsl(var(--border) / 0.25) 1px, transparent 1px);
   background-size: 38px 38px;
+}
+
+.font-brand {
+  font-family: Orbitron, Roboto, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }

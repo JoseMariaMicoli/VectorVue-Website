@@ -1,0 +1,31 @@
+<svg width="920" height="680" viewBox="0 0 920 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="70" y1="30" x2="850" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF2FF" />
+      <stop offset="1" stop-color="#F8FAFC" />
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="900" height="660" rx="28" fill="url(#bg2)" stroke="#CBD5E1" stroke-width="2" />
+  <rect x="60" y="70" width="800" height="110" rx="16" fill="#0F172A" />
+  <text x="90" y="116" fill="#E2E8F0" font-size="24" font-family="Segoe UI, Arial, sans-serif">Evidence Timeline</text>
+  <text x="90" y="148" fill="#94A3B8" font-size="16" font-family="Segoe UI, Arial, sans-serif">Control checks, incidents, remediation, and verification.</text>
+  <rect x="60" y="220" width="260" height="380" rx="16" fill="#FFFFFF" stroke="#CBD5E1" />
+  <rect x="330" y="220" width="260" height="380" rx="16" fill="#FFFFFF" stroke="#CBD5E1" />
+  <rect x="600" y="220" width="260" height="380" rx="16" fill="#FFFFFF" stroke="#CBD5E1" />
+  <text x="90" y="265" fill="#0F172A" font-size="20" font-family="Segoe UI, Arial, sans-serif">Telemetry</text>
+  <rect x="90" y="288" width="200" height="10" rx="5" fill="#60A5FA" />
+  <rect x="90" y="308" width="170" height="10" rx="5" fill="#93C5FD" />
+  <rect x="90" y="328" width="210" height="10" rx="5" fill="#BFDBFE" />
+  <text x="360" y="265" fill="#0F172A" font-size="20" font-family="Segoe UI, Arial, sans-serif">Validation</text>
+  <circle cx="370" cy="320" r="9" fill="#22C55E" />
+  <text x="390" y="326" fill="#334155" font-size="16" font-family="Segoe UI, Arial, sans-serif">Policy checks pass</text>
+  <circle cx="370" cy="360" r="9" fill="#0EA5E9" />
+  <text x="390" y="366" fill="#334155" font-size="16" font-family="Segoe UI, Arial, sans-serif">Evidence signed</text>
+  <circle cx="370" cy="400" r="9" fill="#6366F1" />
+  <text x="390" y="406" fill="#334155" font-size="16" font-family="Segoe UI, Arial, sans-serif">Cross-system correlated</text>
+  <text x="630" y="265" fill="#0F172A" font-size="20" font-family="Segoe UI, Arial, sans-serif">Export</text>
+  <rect x="630" y="295" width="200" height="130" rx="10" fill="#F8FAFC" stroke="#CBD5E1" />
+  <text x="650" y="340" fill="#334155" font-size="16" font-family="Segoe UI, Arial, sans-serif">SOC 2 Package</text>
+  <text x="650" y="368" fill="#334155" font-size="16" font-family="Segoe UI, Arial, sans-serif">Customer Review Kit</text>
+  <text x="650" y="396" fill="#334155" font-size="16" font-family="Segoe UI, Arial, sans-serif">Audit Artifact Bundle</text>
+</svg>

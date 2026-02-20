@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Container } from '@/components/container';
 import { SectionTitle } from '@/components/section-title';
 
@@ -33,10 +34,21 @@ export default function ProductPage() {
 
   return (
     <Container className="py-16 sm:py-20">
-      <SectionTitle eyebrow="Product" title="A system of record for provable security controls">
-        VectorVue converts operational telemetry into trusted assurance evidence so security and compliance teams can demonstrate
-        control performance continuously.
-      </SectionTitle>
+      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_420px]">
+        <SectionTitle eyebrow="Product" title="A system of record for provable security controls">
+          VectorVue converts operational telemetry into trusted assurance evidence so security and compliance teams can demonstrate
+          control performance continuously.
+        </SectionTitle>
+        <div className="rounded-2xl border border-border/80 bg-background/70 p-3">
+          <Image
+            src="/images/vectorvue-hero.png"
+            alt="VectorVue evidence timeline"
+            width={1536}
+            height={1024}
+            className="h-auto w-full rounded-xl"
+          />
+        </div>
+      </div>
 
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         {capabilities.map((capability) => (

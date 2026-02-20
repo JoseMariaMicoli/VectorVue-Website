@@ -1,6 +1,5 @@
-Contact: mailto:security@vectorvue.nyxera.cloud
+Contact: mailto:founder@nyxera.cloud
 Expires: 2027-01-01T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://vectorvue.nyxera.cloud/.well-known/security.txt
-Policy: https://vectorvue.nyxera.cloud/security
-Hiring: https://vectorvue.nyxera.cloud/careers
+Policy: https://vectorvue.nyxera.cloud/security-policy

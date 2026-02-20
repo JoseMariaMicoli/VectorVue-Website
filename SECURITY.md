@@ -37,7 +37,7 @@ The production VectorVue platform is handled under a separate private disclosure
 
 Please report responsibly via email:
 
-security@vectorvue.nyxera.cloud
+founder@nyxera.cloud
 
 Include:
 
