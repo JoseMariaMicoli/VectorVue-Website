@@ -82,7 +82,7 @@ jobs:
     name: Deploy to Staging (QA)
     runs-on: ubuntu-latest
     needs: checks
-    if: github.event_name == 'push' && github.ref == 'refs/heads/QA'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/QA' && secrets.STAGING_SSH_KEY != '' && secrets.STAGING_SSH_HOST != '' && secrets.STAGING_SSH_USER != '' && secrets.STAGING_DEPLOY_PATH != '' && secrets.STAGING_HEALTHCHECK_URL != ''
     environment: staging
 
     steps:
