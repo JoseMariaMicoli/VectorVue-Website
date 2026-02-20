@@ -1,13 +1,10 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
+  const mounted = typeof resolvedTheme !== 'undefined';
 
   if (!mounted) {
     return <div className="h-9 w-9 rounded-md border border-border bg-background" aria-hidden="true" />;
