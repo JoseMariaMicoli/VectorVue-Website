@@ -33,8 +33,8 @@ export default function ProductPage() {
   ];
 
   return (
-    <Container className="py-16 sm:py-20">
-      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_420px]">
+    <Container className="py-12 sm:py-16 lg:py-20 3xl:py-24">
+      <div className="grid items-start gap-8 lg:gap-10 xl:grid-cols-[minmax(0,1fr)_460px] 3xl:grid-cols-[minmax(0,1fr)_560px]">
         <SectionTitle eyebrow="Product" title="A system of record for provable security controls">
           VectorVue converts operational telemetry into trusted assurance evidence so security and compliance teams can demonstrate
           control performance continuously.
@@ -50,10 +50,10 @@ export default function ProductPage() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-6 md:grid-cols-2">
         {capabilities.map((capability) => (
           <article key={capability.title} className="surface-panel p-7">
-            <h3 className="text-xl font-semibold">{capability.title}</h3>
+            <h3 className="text-lg font-semibold sm:text-xl">{capability.title}</h3>
             <p className="mt-3 text-secondary">{capability.description}</p>
           </article>
         ))}

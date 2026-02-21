@@ -36,13 +36,13 @@ export default function UseCasesPage() {
   ];
 
   return (
-    <Container className="py-16 sm:py-20">
+    <Container className="py-12 sm:py-16 lg:py-20 3xl:py-24">
       <SectionTitle eyebrow="Use Cases" title="Built for teams who need defensible security evidence" />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
         {cases.map((entry) => (
           <section key={entry.title} className="surface-panel p-7">
-            <h3 className="text-xl font-semibold">{entry.title}</h3>
+            <h3 className="text-lg font-semibold sm:text-xl">{entry.title}</h3>
             <ul className="mt-4 space-y-3 text-secondary">
               {entry.points.map((point) => (
                 <li key={point}>• {point}</li>

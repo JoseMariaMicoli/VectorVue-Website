@@ -15,7 +15,7 @@ export default function SecurityPage() {
   const disclosureAction = getFormAction(securityEmail);
 
   return (
-    <Container className="py-16 sm:py-20">
+    <Container className="py-12 sm:py-16 lg:py-20 3xl:py-24">
       <SectionTitle eyebrow="Security" title="Built for verifiable trust">
         VectorVue is a commercial product from NyxeraLabs focused on continuous control assurance with auditable evidence.
       </SectionTitle>

@@ -3,10 +3,10 @@ import { Container } from '@/components/container';
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/80 py-10">
-      <Container className="flex flex-col gap-5 text-sm text-secondary md:flex-row md:items-center md:justify-between">
-        <p>© {new Date().getFullYear()} VectorVue by NyxeraLabs. Commercial security assurance platform.</p>
-        <div className="flex gap-5">
+    <footer className="border-t border-border/80 py-8 sm:py-10 3xl:py-12">
+      <Container className="flex flex-col gap-5 text-sm text-secondary md:flex-row md:items-center md:justify-between 3xl:text-base">
+        <p className="max-w-3xl">© {new Date().getFullYear()} VectorVue by NyxeraLabs. Commercial security assurance platform.</p>
+        <div className="flex flex-wrap gap-5">
           <Link href="/security" className="hover:text-foreground">
             Security
           </Link>

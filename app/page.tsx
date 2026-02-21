@@ -9,20 +9,20 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-border/80 bg-premium-canvas bg-vectorvue-hero-glow">
         <div className="pointer-events-none absolute -left-32 top-8 h-64 w-64 rounded-full bg-electric/10 blur-3xl" aria-hidden="true" />
         <div className="pointer-events-none absolute right-8 top-0 h-72 w-72 rounded-full bg-primary/20 blur-3xl" aria-hidden="true" />
-        <Container className="relative py-20 sm:py-28">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_420px]">
+        <Container className="relative py-14 sm:py-20 lg:py-24 3xl:py-28">
+          <div className="grid items-center gap-8 lg:gap-10 xl:grid-cols-[minmax(0,1fr)_460px] 3xl:grid-cols-[minmax(0,1fr)_560px]">
             <div className="max-w-4xl">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">Continuous Security Assurance</p>
-              <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary sm:text-sm">Continuous Security Assurance</p>
+              <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl 3xl:text-7xl">
                 Stop Preparing for Audits. Start Passing Them Continuously.
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary">
+              <p className="mt-5 max-w-3xl text-base leading-7 text-secondary sm:mt-6 sm:text-lg sm:leading-8 3xl:text-xl">
                 VectorVue continuously verifies that your controls operate as designed and transforms operational activity into
                 auditor-verifiable evidence. Your team stops scrambling for screenshots and starts showing provable control health
                 in real time.
               </p>
               <p className="mt-4 text-sm font-medium text-secondary">Commercial product by NyxeraLabs.</p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
                 <Link href="/contact" className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primaryHover">
                   Request Pilot
                 </Link>
@@ -45,7 +45,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-b border-border/80 py-16 sm:py-20">
+      <section className="border-b border-border/80 py-12 sm:py-16 lg:py-20 3xl:py-24">
         <Container>
           <SectionTitle
             eyebrow="The Problem"
@@ -58,13 +58,13 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-b border-border/80 py-16 sm:py-20">
+      <section className="border-b border-border/80 py-12 sm:py-16 lg:py-20 3xl:py-24">
         <Container>
           <SectionTitle eyebrow="How It Works" title="From operational activity to trusted evidence">
             VectorVue captures security-relevant events and validates each control against objective checks, then preserves the
             resulting evidence with verification records for auditor review.
           </SectionTitle>
-          <div className="mt-10 grid gap-5 md:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
             {[
               'Operational Events',
               'Continuous Validation',
@@ -80,10 +80,10 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-b border-border/80 py-16 sm:py-20">
+      <section className="border-b border-border/80 py-12 sm:py-16 lg:py-20 3xl:py-24">
         <Container>
           <SectionTitle eyebrow="Business Value" title="Security outcomes that move revenue and reduce audit drag" />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
             {[
               {
                 title: 'Faster Enterprise Sales',
@@ -107,7 +107,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-b border-border/80 py-16 sm:py-20">
+      <section className="border-b border-border/80 py-12 sm:py-16 lg:py-20 3xl:py-24">
         <Container>
           <SectionTitle eyebrow="Social Proof" title="Trusted by security leaders at high-growth and regulated organizations">
             Replace this placeholder with customer logos, deployment stats, and short security-team testimonials.
@@ -122,9 +122,9 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <Container className="surface-panel-elevated p-8 text-center sm:p-12">
-          <h2 className="text-3xl font-semibold tracking-tight">Ready to prove control effectiveness continuously?</h2>
+      <section className="py-12 sm:py-16 lg:py-20 3xl:py-24">
+        <Container className="surface-panel-elevated p-6 text-center sm:p-10 lg:p-12 3xl:p-16">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl 3xl:text-4xl">Ready to prove control effectiveness continuously?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-secondary">
             Start a VectorVue pilot and align security, engineering, and compliance around evidence that stands up to scrutiny.
           </p>

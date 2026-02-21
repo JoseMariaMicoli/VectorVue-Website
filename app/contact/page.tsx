@@ -13,8 +13,8 @@ export default function ContactPage() {
   const formAction = getFormAction(contactEmail);
 
   return (
-    <Container className="py-16 sm:py-20">
-      <div className="grid gap-12 lg:grid-cols-2">
+    <Container className="py-12 sm:py-16 lg:py-20 3xl:py-24">
+      <div className="grid gap-8 sm:gap-10 lg:gap-12 xl:grid-cols-2">
         <section>
           <SectionTitle eyebrow="Contact" title="Request a VectorVue Pilot">
             Tell us about your timeline and primary assurance concerns. We will follow up with a scoped pilot plan for your team.

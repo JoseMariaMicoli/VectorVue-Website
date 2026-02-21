@@ -150,17 +150,17 @@ export default async function SecurityPolicyPage() {
   const blocks = parsePolicyMarkdown(content);
 
   return (
-    <Container className="py-16 sm:py-20">
-      <div className="surface-panel-elevated mx-auto max-w-4xl p-6 sm:p-10">
+    <Container className="py-12 sm:py-16 lg:py-20 3xl:py-24">
+      <div className="surface-panel-elevated mx-auto max-w-5xl p-5 sm:p-8 lg:p-10 3xl:max-w-6xl 3xl:p-12">
         <p className="text-xs uppercase tracking-[0.18em] text-primary/90">Live Policy</p>
-        <h1 className="mt-2 font-brand text-3xl text-foreground sm:text-4xl">Security Policy</h1>
+        <h1 className="mt-2 font-brand text-2xl text-foreground sm:text-3xl lg:text-4xl 3xl:text-5xl">Security Policy</h1>
         <p className="mt-3 text-sm text-secondary">Source: `SECURITY.md`</p>
 
-        <article className="mt-8 space-y-5 text-foreground">
+        <article className="mt-7 space-y-5 text-foreground sm:mt-8">
           {blocks.map((block, index) => {
             if (block.type === 'h1') {
               return (
-                <h2 key={index} className="pt-2 font-brand text-2xl text-foreground">
+                <h2 key={index} className="pt-2 font-brand text-xl text-foreground sm:text-2xl 3xl:text-3xl">
                   {block.text}
                 </h2>
               );
@@ -168,7 +168,7 @@ export default async function SecurityPolicyPage() {
 
             if (block.type === 'h2') {
               return (
-                <h3 key={index} className="pt-2 text-xl font-semibold text-foreground">
+                <h3 key={index} className="pt-2 text-lg font-semibold text-foreground sm:text-xl 3xl:text-2xl">
                   {block.text}
                 </h3>
               );
@@ -199,7 +199,7 @@ export default async function SecurityPolicyPage() {
             }
 
             return (
-              <p key={index} className="leading-7">
+              <p key={index} className="text-sm leading-7 sm:text-base 3xl:text-lg">
                 {renderTextWithLinks(block.text)}
               </p>
             );
