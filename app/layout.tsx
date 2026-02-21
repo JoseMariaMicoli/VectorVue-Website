@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'VectorVue by NyxeraLabs | Continuous Security Assurance',
+    default: 'VectorVue by Nyxera Labs | Security Validation Infrastructure Platform',
     template: '%s | VectorVue'
   },
   description: siteConfig.description,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'VectorVue by NyxeraLabs | Continuous Security Assurance',
+    title: 'VectorVue by Nyxera Labs | Security Validation Infrastructure Platform',
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VectorVue by NyxeraLabs | Continuous Security Assurance',
+    title: 'VectorVue by Nyxera Labs | Security Validation Infrastructure Platform',
     description: siteConfig.description
   }
 };

@@ -5,7 +5,8 @@ import { SectionTitle } from '@/components/section-title';
 
 export const metadata: Metadata = {
   title: 'Product',
-  description: 'VectorVue product overview: timeline evidence, control effectiveness, exportable proof, and continuous compliance.'
+  description:
+    'VectorVue by Nyxera Labs converts operational telemetry into structured, auditor-verifiable assurance evidence for continuous control effectiveness.'
 };
 
 export default function ProductPage() {
@@ -13,31 +14,28 @@ export default function ProductPage() {
     {
       title: 'Timeline Evidence',
       description:
-        'Track control activity as a chronological record, so teams and auditors can see exactly when controls were tested and what changed.'
+        'Track control validation as a chronological record aligned to security objectives.'
     },
     {
       title: 'Control Effectiveness',
-      description:
-        'Measure whether controls are functioning over time, not just configured once. Surface drift and broken assumptions quickly.'
+      description: 'Measure whether controls function over time - not just whether they exist.'
     },
     {
       title: 'Exportable Proof',
-      description:
-        'Package evidence and verification artifacts into exportable reports for customer security reviews and formal audits.'
+      description: 'Generate structured evidence artifacts for customer reviews and audits.'
     },
     {
       title: 'Continuous Compliance',
-      description:
-        'Map validated controls to compliance objectives and maintain readiness between audit cycles across frameworks.'
+      description: 'Map validated controls to compliance objectives and maintain readiness across audit cycles.'
     }
   ];
 
   return (
     <Container className="py-12 sm:py-16 lg:py-20 3xl:py-24">
       <div className="grid items-start gap-8 lg:gap-10 xl:grid-cols-[minmax(0,1fr)_460px] 3xl:grid-cols-[minmax(0,1fr)_560px]">
-        <SectionTitle eyebrow="Product" title="A system of record for provable security controls">
-          VectorVue converts operational telemetry into trusted assurance evidence so security and compliance teams can demonstrate
-          control performance continuously.
+        <SectionTitle eyebrow="Product" title="VectorVue — Security Validation Infrastructure">
+          VectorVue converts operational telemetry into structured, auditor-verifiable assurance evidence so security and
+          compliance teams can demonstrate control effectiveness continuously.
         </SectionTitle>
         <div className="surface-panel-elevated p-3">
           <Image

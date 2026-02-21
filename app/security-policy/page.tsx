@@ -5,8 +5,8 @@ import type { ReactNode } from 'react';
 import { Container } from '@/components/container';
 
 export const metadata: Metadata = {
-  title: 'Security Policy',
-  description: 'Responsible disclosure and security policy for the VectorVue website.'
+  title: 'Responsible Disclosure',
+  description: 'Responsible disclosure policy for the VectorVue by Nyxera Labs website repository.'
 };
 
 async function getSecurityPolicyText() {
@@ -153,7 +153,7 @@ export default async function SecurityPolicyPage() {
     <Container className="py-12 sm:py-16 lg:py-20 3xl:py-24">
       <div className="surface-panel-elevated mx-auto max-w-5xl p-5 sm:p-8 lg:p-10 3xl:max-w-6xl 3xl:p-12">
         <p className="text-xs uppercase tracking-[0.18em] text-primary/90">Live Policy</p>
-        <h1 className="mt-2 font-brand text-2xl text-foreground sm:text-3xl lg:text-4xl 3xl:text-5xl">Security Policy</h1>
+        <h1 className="mt-2 font-brand text-2xl text-foreground sm:text-3xl lg:text-4xl 3xl:text-5xl">Responsible Disclosure</h1>
         <p className="mt-3 text-sm text-secondary">Source: `SECURITY.md`</p>
 
         <article className="mt-7 space-y-5 text-foreground sm:mt-8">

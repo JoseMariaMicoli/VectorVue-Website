@@ -5,7 +5,7 @@ export const EMAIL_CONFIG = {
     cc: 'founder@nyxera.cloud'
   },
   vectorvue: {
-    contact: 'info@nyxera.cloud',
+    contact: 'contact@nyxera.cloud',
     security: 'security@nyxera.cloud',
     cc: 'founder@nyxera.cloud'
   }

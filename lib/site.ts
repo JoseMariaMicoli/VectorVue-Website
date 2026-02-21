@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: 'VectorVue',
+  name: 'VectorVue by Nyxera Labs',
   description:
-    'VectorVue by NyxeraLabs delivers Continuous Security Assurance with auditor-verifiable evidence.',
+    'VectorVue by Nyxera Labs delivers Security Validation Infrastructure for continuous control validation and structured assurance evidence.',
   url: 'https://vectorvue.nyxera.cloud'
 };
 
@@ -9,6 +9,6 @@ export const navItems = [
   { href: '/product', label: 'Product' },
   { href: '/use-cases', label: 'Use Cases' },
   { href: '/security', label: 'Security' },
-  { href: '/security-policy', label: 'Security Policy' },
+  { href: '/partners', label: 'Partners' },
   { href: '/contact', label: 'Request Pilot' }
 ];

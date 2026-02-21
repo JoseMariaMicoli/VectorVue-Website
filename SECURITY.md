@@ -1,35 +1,32 @@
-# Security Policy
+# Responsible Disclosure
 
-VectorVue Website — Responsible Disclosure
+VectorVue by Nyxera Labs — Website Security Disclosure
 
-This repository hosts the public website for the VectorVue platform.
-It does NOT contain production services, customer data, or operational security infrastructure.
-
-However, we still treat integrity and availability seriously.
+This repository hosts the public marketing website only.
+It does not contain production services or customer environments.
 
 ---
 
-## Supported Scope
+## Scope
 
 In scope:
 
 • Website content integrity issues
-• Supply chain dependency vulnerabilities
+• Dependency vulnerabilities affecting this repository
 • Misconfigured security headers
-• Cache poisoning or CDN delivery issues
+• CDN delivery or cache poisoning issues
 • TLS or transport security problems
-• Build pipeline compromise risks
+• Build or deployment pipeline compromise risks
 
 Out of scope:
 
 • Theoretical best-practice suggestions
 • SEO issues
-• Missing headers that do not create real risk
-• Clickjacking without exploitability
+• Missing headers without demonstrable impact
 • Social engineering attempts
 • Issues requiring browser extensions
 
-The production VectorVue platform is handled under a separate private disclosure program.
+Platform security is managed under Nyxera Labs' coordinated disclosure program.
 
 ---
 
@@ -56,32 +53,30 @@ Do NOT open public GitHub issues for security vulnerabilities.
 
 We follow coordinated disclosure:
 
-1. We confirm receipt within 72 hours
-2. We triage and validate
-3. We patch
-4. We credit the reporter (optional)
-5. We publish a security notice if relevant
-
-We will never take legal action against researchers acting in good faith.
+• Acknowledge within 72 hours
+• Validate and triage
+• Remediate
+• Credit researcher (optional)
+• Publish notice when appropriate
 
 ---
 
 ## Safe Harbor
 
-You are authorized to test this repository provided you:
+Good-faith research conducted within defined scope is considered authorized.
+
+Research expectations:
 
 • Avoid data destruction
 • Avoid service disruption
 • Do not access other users' data
 • Respect rate limits
 
-If you follow these rules, your research is considered authorized.
-
 ---
 
 ## Security Philosophy
 
-VectorVue is built on the premise that trust must be verifiable.
+VectorVue by Nyxera Labs is built on the principle that trust must be verifiable.
 
 Responsible disclosure helps maintain that trust.
 
