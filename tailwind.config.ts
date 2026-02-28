@@ -20,8 +20,8 @@ const config: Config = {
           surface: '#0D1436',
           surfaceElevated: '#121B45',
           border: '#202C66',
-          primary: '#8A2BE2',
-          primaryHover: '#7B26CB',
+          primary: '#3b82f6',
+          primaryHover: '#2563eb',
           electric: '#00FFF7',
           text: '#E0E0E0',
           textSecondary: '#A0A0A0'

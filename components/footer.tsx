@@ -4,8 +4,6 @@ import { Container } from '@/components/container';
 import { siteConfig } from '@/lib/site';
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-border/70 bg-[#0a1220] py-8 text-slate-200 sm:py-10 3xl:py-12">
       <Container className="flex flex-col gap-5 text-sm text-slate-300 md:flex-row md:items-center md:justify-between 3xl:text-base">
@@ -16,7 +14,7 @@ export function Footer() {
             </div>
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-300">NyxeraLabs</span>
           </div>
-          <p>VectorVue by NyxeraLabs — All Rights Reserved © {year}</p>
+          <p>VectorVue by Nyxera Labs. All rights reserved © 2026</p>
           <p className="mt-1">Security Validation Infrastructure Platform.</p>
         </div>
         <div className="flex flex-wrap gap-5">
@@ -43,6 +41,15 @@ export function Footer() {
           </a>
           <a href="https://spectrastrike.nyxera.cloud" className="hover:text-white">
             SpectraStrike
+          </a>
+          <a href="https://nyxera-nexus.nyxera.cloud" className="hover:text-white">
+            Nyxera Nexus
+          </a>
+          <a href="https://docs.vectorvue.nyxera.cloud" className="hover:text-white">
+            VectorVue Docs
+          </a>
+          <a href="https://docs.nyxera-nexus.nyxera.cloud" className="hover:text-white">
+            Nyxera Nexus Docs
           </a>
         </div>
       </Container>
