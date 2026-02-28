@@ -18,39 +18,30 @@ export function Footer() {
           <p className="mt-1">Security Validation Infrastructure Platform.</p>
         </div>
         <div className="flex flex-wrap gap-5">
-          <Link href="/product" className="hover:text-white">
-            Product
-          </Link>
-          <Link href="/use-cases" className="hover:text-white">
-            Use Cases
-          </Link>
-          <Link href="/security" className="hover:text-white">
-            Security
-          </Link>
-          <Link href="/security-policy" className="hover:text-white">
-            Responsible Disclosure
-          </Link>
-          <Link href="/contact" className="hover:text-white">
-            Contact
-          </Link>
-          <a href={siteConfig.githubUrl} className="hover:text-white">
-            GitHub
-          </a>
           <a href="https://nyxera.cloud" className="hover:text-white">
             NyxeraLabs
           </a>
           <a href="https://spectrastrike.nyxera.cloud" className="hover:text-white">
             SpectraStrike
           </a>
-          <a href="https://nyxera-nexus.nyxera.cloud" className="hover:text-white">
+          <a href="https://docs.spectrastrike.nyxera.cloud" className="hover:text-white">
+            Spectra Docs
+          </a>
+          <a href="https://nexus.nyxera.cloud" className="hover:text-white">
             Nyxera Nexus
+          </a>
+          <a href="https://docs.nexus.nyxera.cloud" className="hover:text-white">
+            Nexus Docs
           </a>
           <a href="https://docs.vectorvue.nyxera.cloud" className="hover:text-white">
             VectorVue Docs
           </a>
-          <a href="https://docs.nyxera-nexus.nyxera.cloud" className="hover:text-white">
-            Nyxera Nexus Docs
-          </a>
+          <Link href="/product" className="hover:text-white">Product</Link>
+          <Link href="/use-cases" className="hover:text-white">Use Cases</Link>
+          <Link href="/security" className="hover:text-white">Security</Link>
+          <Link href="/security-policy" className="hover:text-white">Responsible Disclosure</Link>
+          <Link href="/contact" className="hover:text-white">Contact</Link>
+          <a href={siteConfig.githubUrl} className="hover:text-white">GitHub</a>
         </div>
       </Container>
     </footer>
