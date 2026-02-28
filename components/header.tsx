@@ -18,9 +18,15 @@ export function Header() {
         </Link>
         <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm text-secondary transition-colors hover:text-foreground">
-              {item.label}
-            </Link>
+            item.external ? (
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm text-secondary transition-colors hover:text-foreground">
+                {item.label}
+              </a>
+            ) : (
+              <Link key={item.href} href={item.href} className="text-sm text-secondary transition-colors hover:text-foreground">
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
         <div className="flex items-center gap-3">
@@ -32,13 +38,25 @@ export function Header() {
             <div className="absolute right-0 top-11 w-56 rounded-lg border border-border bg-surfaceElevated p-2 shadow-layered">
               <nav className="flex flex-col">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-md px-3 py-2 text-sm text-secondary transition-colors hover:bg-hover hover:text-foreground"
-                  >
-                    {item.label}
-                  </Link>
+                  item.external ? (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-md px-3 py-2 text-sm text-secondary transition-colors hover:bg-hover hover:text-foreground"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="rounded-md px-3 py-2 text-sm text-secondary transition-colors hover:bg-hover hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
               </nav>
             </div>

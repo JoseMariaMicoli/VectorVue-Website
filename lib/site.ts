@@ -7,9 +7,12 @@ export const siteConfig = {
 };
 
 export const navItems = [
-  { href: '/product', label: 'Product' },
-  { href: '/use-cases', label: 'Use Cases' },
-  { href: '/security', label: 'Security' },
-  { href: '/partners', label: 'Partners' },
-  { href: '/contact', label: 'Request Pilot' }
+  { href: '/product', label: 'Product', external: false },
+  { href: '/use-cases', label: 'Use Cases', external: false },
+  { href: '/security', label: 'Security', external: false },
+  { href: '/contact', label: 'Request Pilot', external: false },
+  { href: 'https://docs.vectorvue.nyxera.cloud', label: 'Documentation', external: true },
+  { href: 'https://spectrastrike.nyxera.cloud', label: 'SpectraStrike', external: true },
+  { href: 'https://nyxera-nexus.nyxera.cloud', label: 'Nyxera Nexus', external: true },
+  { href: 'https://docs.nyxera-nexus.nyxera.cloud', label: 'Nexus Docs', external: true }
 ];
